@@ -1,18 +1,16 @@
-import os
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from os import getenv
 
 app = Flask(__name__)
-app.config.from_object(os.environ['APP_SETTINGS'])
+app.config.from_object(getenv('APP_SETTINGS'))
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db = SQLAlchemy(app)
 
 
 @app.route('/')
 def index():
-    return 'Hello!'
-
-
-@app.route('/<name>')
-def hello_name(name):
-    return f'Hello, {name}!'
+    return "hello!"
 
 
 if __name__ == '__main__':
