@@ -8,10 +8,11 @@ class Config:
     CSRF_ENABLED = True
     SECRET_KEY = 'postgres'
     SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL')
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
 class ProductionConfig(Config):
-    DEBUG = False
+    pass
 
 
 class StagingConfig(Config):

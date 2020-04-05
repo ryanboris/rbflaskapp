@@ -9,7 +9,7 @@ __pycache__/
 *.so
 data/
 
-
+.mypy_cache/
 # Distribution / packaging
 .Python
 env/
